@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.mobilecenterdemoapp.xamarin" android:installLocation="auto" android:versionCode="1" android:versionName="1.1">
+	<uses-sdk android:minSdkVersion="15" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.USE_CREDENTIALS" />
+	<uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+	<uses-permission android:name="android.permission.ACCOUNT_MANAGER" />
+	<uses-permission android:name="android.permission.BIND_CARRIER_MESSAGING_SERVICE" />
+	<uses-permission android:name="android.permission.BIND_CARRIER_SERVICES" />
+	<uses-permission android:name="android.permission.BODY_SENSORS" />
+	<uses-permission android:name="android.permission.BROADCAST_WAP_PUSH" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.PERSISTENT_ACTIVITY" />
+	<uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+	<application android:label="MobileCenterDemoApp.Android" android:icon="@drawable/Icon"></application>
+</manifest>

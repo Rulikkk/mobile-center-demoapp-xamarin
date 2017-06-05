@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileCenterDemoApp.Pages.ErrorPage">
+    <StackLayout VerticalOptions="FillAndExpand">
+        <Grid VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="error3.png" Aspect="AspectFit" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="Center"/>
+            <Label TextColor="LightGray" 
+                   FontSize="25"
+                   HorizontalOptions="Center"
+                   Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                   VerticalOptions="Center" Text="Error"
+                   FontAttributes="Bold"/>
+            <Label x:Name="ErrorLabel" TextColor="LightGray" FontSize="25" HorizontalOptions="Center" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="Center"/>
+            <Button Clicked="HomeClicked"
+                    Grid.Row="4" Grid.Column="0" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="EndAndExpand" 
+                    ContentLayout="Top,0"
+                    BackgroundColor="White"
+                    WidthRequest="Infinity"
+                    Image="mainicon1.png" Text="Home" />
+            <Button Clicked="StatisticsClicked"
+                    Grid.Row="4" Grid.Column="1" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="EndAndExpand" 
+                    ContentLayout="Top,0"
+                    BackgroundColor="White"
+                    WidthRequest="Infinity"
+                    Image="statisticsicon1.png" Text="Statistics" />
+        </Grid>
+    </StackLayout>
+</ContentPage>
