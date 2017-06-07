@@ -1,12 +1,8 @@
-#Pedometer. Demo application. 
+# Pedometer. Demo application. 
 
 This is demo application which shows ablities of Mobile Center.
 
 ![](Images/general.png)
-
-
-# Mobile center xamarin demo app
-Demo mobile application for mobile center
 
 ## Setting up enviroment for Android
 * Install Visual Studio 2017
