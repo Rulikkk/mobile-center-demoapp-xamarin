@@ -95,7 +95,7 @@ namespace MobileCenterDemoApp.Droid.Dependencies
                 await Task.Run(() =>
                 {
                     // Await connectiong
-                    while (Client.IsConnecting)
+                    while (Client.IsConnecting || MainActivity.Activity.AuthInProgress)
                     {
                         Task.Delay(50);
                     }

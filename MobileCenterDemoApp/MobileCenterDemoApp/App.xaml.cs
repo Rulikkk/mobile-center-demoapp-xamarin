@@ -31,6 +31,7 @@ namespace MobileCenterDemoApp
                 _alreadyInit = true;
 
             }
+
         }
 
         /// <summary>
@@ -42,28 +43,10 @@ namespace MobileCenterDemoApp
             Current.MainPage = page;
         }
 
-        protected override async void OnResume()
-        {
-            if (!DataStore.FitnessTracker.IsConnected)
-                await DataStore.FitnessTracker.Connect();
-
-            base.OnResume();
-        }
-
         protected override async void OnStart()
         {
-            if (!DataStore.FitnessTracker.IsConnected)
-                await DataStore.FitnessTracker.Connect();
-
             base.OnStart();
-        }
-
-        protected override void OnSleep()
-        {
-            if (DataStore.FitnessTracker.IsConnected)
-                DataStore.FitnessTracker.Disconnect();
-
-            base.OnSleep();
+            //await DataStore.FitnessTracker.Connect();
         }
     }
 }

@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
     using Microsoft.Azure.Mobile.Analytics;
     using MobileCenterDemoApp.Helpers;
     using MobileCenterDemoApp.Models;
@@ -110,7 +111,7 @@
 
             SocialAccount account = await facebookService.Login();
 
-            Login(account, "Facebook");
+            await Login(account, "Facebook");
         }
 
         /// <summary>
@@ -131,10 +132,10 @@
 
             SocialAccount account = await twitterService.Login();
 
-            Login(account, "Twitter");
+            await Login(account, "Twitter");
         }
 
-        private void Login(SocialAccount account, string socialNet)
+        private async Task Login(SocialAccount account, string socialNet)
         {
             Analytics.TrackEvent("Trying to login in Facebook/Twitter",
                 new Dictionary<string, string>
@@ -169,6 +170,8 @@
 
             try
             {
+                await DataStore.FitnessTracker.Connect();
+
                 DataStore.FitnessTracker.OnError += ErrorHandle;                
                 if (!DataStore.FitnessTracker.IsConnected)
                 {

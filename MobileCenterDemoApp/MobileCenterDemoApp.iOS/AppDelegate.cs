@@ -1,7 +1,4 @@
 ﻿using Foundation;
-using System;
-using System.Diagnostics;
-using System.Linq;
 using UIKit;
 
 namespace MobileCenterDemoApp.iOS
@@ -24,7 +21,14 @@ namespace MobileCenterDemoApp.iOS
 
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-			global::Xamarin.Forms.Forms.Init ();
+
+            // The Xamarin Test Cloud Agent must not be present in a release build of a Xamarin.iOS application; 
+            //      its presence is grounds for the app to be rejected by Apple.
+            // https://developer.xamarin.com/guides/testcloud/uitest/adding-uitest/
+
+            Xamarin.Calabash.Start(); //  Xamarin Test Cloud Agent
+
+            global::Xamarin.Forms.Forms.Init ();
 
             OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
 

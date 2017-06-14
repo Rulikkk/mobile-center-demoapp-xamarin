@@ -22,6 +22,7 @@ namespace MobileCenterDemoApp.Droid
     public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         private bool _authInProgress;
+        public bool AuthInProgress => _authInProgress;
         public GoogleApiClient MClient { get; private set; }
         private const int OauthRequestCode = 1;
 
