@@ -56,15 +56,6 @@
 
             _app.Tap(x => x.Button(buttonName));
 
-            _app.WaitForElement(x => x.Css("TITLE"), timeout: TimeSpan.FromSeconds(100));
-
-            var webTitles = _app.Query(x => x.Css("TITLE"));
-            Assert.IsNotEmpty(webTitles);
-
-            var webTitle = webTitles.First();            
-            Assert.IsTrue(webTitle.TextContent.Contains("Log in to Facebook | Facebook"));
-
-
             _app.WaitForElement(x => x.Css("input"), timeout: TimeSpan.FromSeconds(50));
 
             var inputViewElement = _app.Query(x => x.Css("input"));
