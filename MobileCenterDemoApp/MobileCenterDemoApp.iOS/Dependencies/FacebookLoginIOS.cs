@@ -34,7 +34,6 @@ namespace MobileCenterDemoApp.iOS.Dependencies
                 window.RootViewController = (UIViewController)_oAuth2.GetUI();
                 window.MakeKeyAndVisible();
 
-                // await user login 
                 return await Task.Run(() =>
                 {
                     while (!_isComplite)

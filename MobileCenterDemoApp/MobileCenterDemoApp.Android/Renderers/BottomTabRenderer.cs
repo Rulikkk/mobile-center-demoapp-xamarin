@@ -51,11 +51,9 @@ namespace BottomBar.Droid.Renderers
         #region IOnTabClickListener
         public void OnTabSelected(int position)
         {
-            //Do we need this call? It's also done in OnElementPropertyChanged
             SwitchContent(Element.Children[position]);
             var bottomBarPage = Element as BottomTabbedPage;
             bottomBarPage.CurrentPage = Element.Children[position];
-            //bottomBarPage.RaiseCurrentPageChanged();
         }
 
         public void OnTabReSelected(int position)
@@ -80,8 +78,6 @@ namespace BottomBar.Droid.Renderers
                         pageRenderer.ViewGroup.RemoveFromParent();
                         pageRenderer.Dispose();
                     }
-
-                    // pageToRemove.ClearValue (Platform.RendererProperty);
                 }
 
                 if (_bottomBar != null)
@@ -96,10 +92,6 @@ namespace BottomBar.Droid.Renderers
                     _frameLayout.Dispose();
                     _frameLayout = null;
                 }
-
-                /*if (Element != null) {
-					PageController.InternalChildren.CollectionChanged -= OnChildrenCollectionChanged;
-				}*/
             }
 
             base.Dispose(disposing);
@@ -130,13 +122,9 @@ namespace BottomBar.Droid.Renderers
                 if (_bottomBar == null)
                 {
                     _pageController = PageController.Create(bottomBarPage);
-
-                    // create a view which will act as container for Page's
                     _frameLayout = new FrameLayout(Forms.Context);
                     _frameLayout.LayoutParameters = new FrameLayout.LayoutParams(LayoutParams.MatchParent, LayoutParams.MatchParent, GravityFlags.Fill);
                     AddView(_frameLayout, 0);
-
-                    // create bottomBar control
                     _bottomBar = BottomNavigationBar.BottomBar.Attach(_frameLayout, null);
                     _bottomBar.NoTabletGoodness();
                     if (bottomBarPage.FixedMode)
@@ -237,10 +225,6 @@ namespace BottomBar.Droid.Renderers
 
                     IVisualElementRenderer renderer = Platform.GetRenderer(child);
                     var navigationRenderer = renderer as NavigationPageRenderer;
-                    if (navigationRenderer != null)
-                    {
-                        // navigationRenderer.ContainerPadding = tabsHeight;
-                    }
                 }
 
                 _bottomBar.Measure(MeasureSpecFactory.MakeMeasureSpec(width, MeasureSpecMode.Exactly), MeasureSpecFactory.MakeMeasureSpec(tabsHeight, MeasureSpecMode.Exactly));
@@ -275,15 +259,11 @@ namespace BottomBar.Droid.Renderers
             }
 
             _bottomBar.SetActiveTabColor(Element.BarTextColor.ToAndroid());
-            // The problem SetActiveTabColor does only work in fiexed mode // haven't found yet how to set text color for tab items on_bottomBar, doesn't seem to have a direct way
         }
 
         void UpdateTabs()
         {
-            // create tab items
             SetTabItems();
-
-            // set tab colors
             SetTabColors();
         }
 

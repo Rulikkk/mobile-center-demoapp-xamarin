@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Azure.Mobile.Analytics;
-using MobileCenterDemoApp.Services;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace MobileCenterDemoApp.Pages
+﻿namespace MobileCenterDemoApp.Pages
 {
-	public partial class StatisticsPage : ContentPage
+    using System;
+    using System.Collections.Generic;
+    using Microsoft.Azure.Mobile.Analytics;
+    using MobileCenterDemoApp.Services;
+    using Xamarin.Forms;
+
+    public partial class StatisticsPage : ContentPage
 	{
 		public StatisticsPage ()
 		{

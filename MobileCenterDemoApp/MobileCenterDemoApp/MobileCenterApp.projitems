@@ -15,8 +15,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\BottomTabbedPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\KeysAndSecrets.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PlatformSizes.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Extentions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\SocialNetworAuthenticators.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\SocialNetworkAuthenticators.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IFitnessTracker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ISocialNet.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SocialAccount.cs" />

@@ -43,10 +43,9 @@ namespace MobileCenterDemoApp
             Current.MainPage = page;
         }
 
-        protected override async void OnStart()
+        protected override void OnStart()
         {
             base.OnStart();
-            //await DataStore.FitnessTracker.Connect();
         }
     }
 }

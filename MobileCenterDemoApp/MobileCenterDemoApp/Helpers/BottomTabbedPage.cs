@@ -12,9 +12,6 @@
 
         public BarThemeTypes BarTheme { get; set; }
 
-        public void RaiseCurrentPageChanged()
-        {
-            OnCurrentPageChanged();
-        }
+        public void RaiseCurrentPageChanged() => OnCurrentPageChanged();
     }
 }

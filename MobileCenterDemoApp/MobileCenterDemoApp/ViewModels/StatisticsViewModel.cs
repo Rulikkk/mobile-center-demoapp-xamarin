@@ -23,14 +23,8 @@
         /// </summary>
         public PlotModel Model
         {
-            get
-            {
-                return _model;
-            }
-            set
-            {
-                SetProperty(ref _model, value);
-            }
+            get => _model;
+            set => SetProperty(ref _model, value);
         }
 
         #endregion

@@ -27,7 +27,7 @@ namespace BottomBar.Droid.Utils
         {
             string name = Path.GetFileNameWithoutExtension(title);
             int id = GetId(type, name);
-            return id; // Resources.System.GetDrawable (Resource.Drawable.dashboard);
+            return id;
         }
 
         static int GetId(Type type, string propertyName)
