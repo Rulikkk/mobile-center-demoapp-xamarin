@@ -1,14 +1,14 @@
-﻿using MobileCenterDemoApp.Models;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Xamarin.Auth;
-using Xamarin.Forms;
-
-namespace MobileCenterDemoApp.Helpers
+﻿namespace MobileCenterDemoApp.Helpers
 {
+    using MobileCenterDemoApp.Models;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using Xamarin.Auth;
+    using Xamarin.Forms;
+
     public static class SocialNetworkAuthenticators
     {
         /// <summary>
@@ -43,13 +43,14 @@ namespace MobileCenterDemoApp.Helpers
             Title = "Mobile Center",
             ShowUIErrors = false
         };
-      
+
+
         /// <summary>
         /// Event handler for OAuth2Authenticator.OnComplete
         /// </summary>
         /// <param name="args"></param>
         /// <returns>Social account with name, user id and account image</returns>
-        public static async Task<SocialAccount> OnCompliteFacebookAuth(AuthenticatorCompletedEventArgs args)
+        public static async Task<SocialAccount> OnCompleteFacebookAuth(AuthenticatorCompletedEventArgs args)
         {
             if (args == null)
             {
@@ -71,12 +72,10 @@ namespace MobileCenterDemoApp.Helpers
             Dictionary<string, string> deserializeObject = JsonConvert.DeserializeObject<Dictionary<string, string>>(text);
 
             SocialAccount account = new SocialAccount();
-            string name;
-            if (deserializeObject.TryGetValue("name", out name))
+            if (deserializeObject.TryGetValue("name", out string name))
                 account.UserName = name;
 
-            string id;
-            if (deserializeObject.TryGetValue("id", out id))
+            if (deserializeObject.TryGetValue("id", out string id))
                 account.UserId = id;
 
             #endregion get username and user id
@@ -86,8 +85,8 @@ namespace MobileCenterDemoApp.Helpers
             request = new OAuth2Request("GET", new Uri($"{FacebookGraphUrl}/v2.9/{account.UserId}/picture"),
                 new Dictionary<string, string>
                 {
-                        {"height", 400.ToString() },
-                        {"width", 400.ToString() }
+                        {"height", "400" },
+                        {"width", "400" }
                 }, args.Account);
             response = await request.GetResponseAsync();
             account.ImageSource = ImageSource.FromStream(response.GetResponseStream);
@@ -97,7 +96,7 @@ namespace MobileCenterDemoApp.Helpers
             return account;
         }
 
-        public static async Task<SocialAccount> OnCompliteTwitterAuth(AuthenticatorCompletedEventArgs args)
+        public static async Task<SocialAccount> OnCompleteTwitterAuth(AuthenticatorCompletedEventArgs args)
         {
             if (args == null)
             {

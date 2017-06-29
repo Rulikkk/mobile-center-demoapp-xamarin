@@ -21,34 +21,19 @@
         /// <summary>
         /// Show header with mobile center logo
         /// </summary>
-        public bool ShowHeader
-        {
-            get
-            {
-                return string.IsNullOrEmpty(ErrorMessage);
-            }
-        }
+        public bool ShowHeader =>string.IsNullOrEmpty(ErrorMessage);
 
         /// <summary>
         /// Show error image with description
         /// </summary>
-        public bool ShowError
-        {
-            get
-            {
-                return !string.IsNullOrEmpty(ErrorMessage);
-            }
-        }
-        
+        public bool ShowError => !string.IsNullOrEmpty(ErrorMessage);
+           
         /// <summary>
         /// Error description
         /// </summary>
         public string ErrorMessage
         {
-            get
-            {
-                return _errorMessage;
-            }
+            get => _errorMessage;
             set
             {
                 SetProperty(ref _errorMessage, value);
@@ -84,11 +69,6 @@
             LoginViaTwitterCommand = new Command(LoginViaTwitter);
 
             BorderWidth = PlatformSizes.ButtonBorderRadius;
-
-            if(Device.RuntimePlatform == Device.iOS)
-            {
-                BorderWidth = 23;
-            }
         }
 
         #region Auth

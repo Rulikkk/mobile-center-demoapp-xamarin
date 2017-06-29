@@ -14,46 +14,22 @@
         /// <summary>
         /// Today steps count
         /// </summary>
-        public int StepsCount
-        {
-            get
-            {
-                return DataStore.TodaySteps;
-            }
-        }
+        public int StepsCount => DataStore.TodaySteps;
 
         /// <summary>
         /// Today calories count
         /// </summary>
-        public double Calories
-        {
-            get
-            {
-                return DataStore.TodayCalories;
-            }
-        }
+        public double Calories => DataStore.TodayCalories;
 
         /// <summary>
         /// Today distance (km)
         /// </summary>
-        public double Distance
-        {
-            get
-            {
-                return DataStore.TodayDistance;
-            }
-        }
+        public double Distance => DataStore.TodayDistance;
 
         /// <summary>
         /// Today activity time
         /// </summary>
-        public string Time
-        {
-            get
-            {
-                return $"{DataStore.TodayActiveTime:%h}h {DataStore.TodayActiveTime:%m}m";
-            }
-        }
+        public string Time => $"{DataStore.TodayActiveTime:%h}h {DataStore.TodayActiveTime:%m}m";
 
         /// <summary>
         /// Account photo image source

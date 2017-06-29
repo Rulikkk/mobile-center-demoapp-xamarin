@@ -24,7 +24,7 @@ namespace MobileCenterDemoApp.iOS.Dependencies
 
             _oAuth2.Completed += async (sender, args) =>
             {
-                _account = await SocialNetworkAuthenticators.OnCompliteFacebookAuth(args);
+                _account = await SocialNetworkAuthenticators.OnCompleteFacebookAuth(args);
                 _isComplite = true;
             };
             _oAuth2.Error += (sender, args) => OnError?.Invoke(args.Message);
@@ -34,7 +34,6 @@ namespace MobileCenterDemoApp.iOS.Dependencies
                 window.RootViewController = (UIViewController)_oAuth2.GetUI();
                 window.MakeKeyAndVisible();
 
-                // await user login 
                 return await Task.Run(() =>
                 {
                     while (!_isComplite)

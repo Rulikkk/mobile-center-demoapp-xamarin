@@ -28,7 +28,7 @@ namespace MobileCenterDemoApp.Droid.Dependencies
             MainActivity.Activity.StartActivity(_authUi);
             _oAuth2.Completed += async (sender, args) =>
             {
-                _account = await SocialNetworkAuthenticators.OnCompliteFacebookAuth(args);
+                _account = await SocialNetworkAuthenticators.OnCompleteFacebookAuth(args);
                 _isComplite = true;
             };
             _oAuth2.Error += (sender, args) => OnError?.Invoke(args.Message);

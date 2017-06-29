@@ -1,9 +1,9 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace MobileCenterDemoApp.Pages
+﻿namespace MobileCenterDemoApp.Pages
 {
+    using System;
+    using Xamarin.Forms;
+    using Xamarin.Forms.Xaml;
+
     /// <summary>
     /// Page for showing some error messages
     /// </summary>

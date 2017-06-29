@@ -37,27 +37,27 @@
         #region Fitness data
 
         /// <summary>
-        /// Raise when fitness data updated
+        /// Raise when fitness data is updated
         /// </summary>
         public static event Action DataFill;
 
         /// <summary>
-        /// Total today steps 
+        /// Total steps for today
         /// </summary>
         public static int TodaySteps { get; private set; }
 
         /// <summary>
-        /// Total today calories 
+        /// Total calories for today 
         /// </summary>
         public static int TodayCalories { get; private set; }
 
         /// <summary>
-        /// Total today distance 
+        /// Total distance for today
         /// </summary>
         public static double TodayDistance { get; private set; }
 
         /// <summary>
-        /// Total today activity time 
+        /// Total activity time for today 
         /// </summary>
         public static TimeSpan TodayActiveTime { get; private set; }
 
@@ -82,7 +82,7 @@
         public static TimeSpan[] FiveDaysActiveTime { get; private set; }
 
         /// <summary>
-        /// Retrieving data from API
+        /// Flag for retrieving data from API
         /// </summary>
         public static bool StatisticsInit { get; private set; }
 
@@ -93,10 +93,7 @@
         /// <summary>
         /// Update data from Fitness API
         /// </summary>
-        public static void ReadTodayInformation()
-        {
-            ReadStatisticsInformation();
-        }
+        public static void ReadTodayInformation() => ReadStatisticsInformation();
 
         private static bool _statisticsInLoad = false;
 

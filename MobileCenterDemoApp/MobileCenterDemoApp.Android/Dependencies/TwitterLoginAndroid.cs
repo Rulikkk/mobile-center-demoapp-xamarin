@@ -25,7 +25,7 @@ namespace MobileCenterDemoApp.Droid.Dependencies
             _oAuth1.Completed += async (sender, args) =>
             {
                 if(args.IsAuthenticated)
-                    account = await Helpers.SocialNetworkAuthenticators.OnCompliteTwitterAuth(args);
+                    account = await Helpers.SocialNetworkAuthenticators.OnCompleteTwitterAuth(args);
                 _isComplite = true;
             };
             _oAuth1.Error += (sender, args) => OnError?.Invoke(args.Message);

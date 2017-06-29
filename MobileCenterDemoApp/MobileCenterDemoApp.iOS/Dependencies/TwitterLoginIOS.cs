@@ -13,7 +13,6 @@ using Accounts;
 [assembly: Dependency(typeof(TwitterLoginiOS))]
 namespace MobileCenterDemoApp.iOS.Dependencies
 {
-    // ReSharper disable once InconsistentNaming
     public class TwitterLoginiOS : ITwitter
     {
         public event Action<string> OnError;
@@ -30,7 +29,7 @@ namespace MobileCenterDemoApp.iOS.Dependencies
 
             _oAuth1.Completed += async (sender, args) =>
             {
-                account = await Helpers.SocialNetworkAuthenticators.OnCompliteTwitterAuth(args);
+                account = await Helpers.SocialNetworkAuthenticators.OnCompleteTwitterAuth(args);
                 _isComplite = true;
                 controller.DismissViewController(true, null);
             };
@@ -45,7 +44,6 @@ namespace MobileCenterDemoApp.iOS.Dependencies
                 window.RootViewController = controller;
                 window.MakeKeyAndVisible();
 
-                // await user login 
                 return await Task.Run(() =>
                 {
                     while (!_isComplite)

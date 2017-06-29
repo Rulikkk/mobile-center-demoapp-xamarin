@@ -19,8 +19,8 @@ namespace MobileCenterDemoApp.Helpers
         /// </summary>
         public INavigation Navigation
         {
-            get { return _navigation; }
-            set { SetProperty(ref _navigation, value); }
+            get => _navigation; 
+            set => SetProperty(ref _navigation, value); 
         }
 
         /// <summary>
@@ -28,8 +28,8 @@ namespace MobileCenterDemoApp.Helpers
         /// </summary>
         public string Title
         {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
+            get => _title; 
+            set => SetProperty(ref _title, value); 
         }
 
         /// <summary>

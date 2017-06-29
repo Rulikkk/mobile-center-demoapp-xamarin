@@ -18,14 +18,17 @@
                 <Image Source="error.png" WidthRequest="150" Aspect="AspectFit" />
                 <Label TextColor="Red" Text="{Binding ErrorMessage}" HorizontalOptions="Center" FontSize="20" />
             </StackLayout>
-            <StackLayout VerticalOptions="EndAndExpand" Margin="0,20,0,40" HorizontalOptions="Center">
-                <Button Command="{Binding LoginViaFacebookCommand}" Text="Login via Facebook" 
-                        BackgroundColor="Blue" Image="facebook.png" TextColor="White" 
-                        WidthRequest="250"
+            <StackLayout VerticalOptions="EndAndExpand" Margin="20,20,20,40" HorizontalOptions="Center">
+                <Button Command="{Binding LoginViaFacebookCommand}" Text="LOGIN VIA FACEBOOK" 
+                        BackgroundColor="#3b5998" Image="facebook.png" TextColor="White" 
+                        WidthRequest="300"
+                        HeightRequest="55"
                         BorderRadius="{Binding BorderWidth}" />
-                <Button Command="{Binding LoginViaTwitterCommand}" Text="Login via Twitter"
-                        BackgroundColor="DeepSkyBlue" Image="twitter.png" TextColor="White" 
-                        WidthRequest="250"
+                <Button Command="{Binding LoginViaTwitterCommand}" Text="LOGIN VIA TWITTER"
+                        BackgroundColor="#48BBEC" Image="twitter.png" TextColor="White" 
+                        WidthRequest="300"
+                        HeightRequest="55"
+
                         BorderRadius="{Binding BorderWidth}" />
 
             </StackLayout>
